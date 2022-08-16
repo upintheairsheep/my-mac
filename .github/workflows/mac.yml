@@ -18,6 +18,7 @@ jobs:
       run: source configure.sh "$VNC_USER_PASSWORD" "$VNC_PASSWORD" "$NGROK_AUTH_TOKEN"
     - name: ngrok is now listening to VNC connections on...
       run: curl --silent http://127.0.0.1:4040/api/tunnels | jq '.tunnels[0].public_url'
+    - name: heres the thing
       run: echo "*$(date)*"$'\n'"macOS VM \`$(hostname)\` is online, VNC is available now at \`$(curl --silent http://127.0.0.1:4040/api/tunnels | jq '.tunnels[0].public_url' | sed 's .\{7\}  ' | tr -d \")\`"$'\n'"*Your password to the* \`VNC User\` *account is* \`$(echo $USERPASSWORD)\`"$'\n'"Your VNC Basic Auth password is \`$(echo $VNCPASSWORD)\`"
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@v2
