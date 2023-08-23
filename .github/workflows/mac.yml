@@ -1,4 +1,4 @@
-name: windows
+name: mac
 on: 
   workflow_dispatch:
 
