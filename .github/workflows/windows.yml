@@ -1,9 +1,7 @@
-name: mac
+name: windows
 on: 
   workflow_dispatch:
-defaults:
-  run:
-    shell: bash
+
 
 jobs:
   build:
